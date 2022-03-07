@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TUGAS KALKULATOR</title>
+    </head>
+    <body>
+        <form id="formulir">
+            <table align="center" cellpadding="20" width="40%" border="0">
+                <thead>
+                    <tr bgcolor="gray">
+                        <th colspan="2">KALKULATORKU</th>
+                    </tr>    
+                </thead>
+                <tfoot>
+                    <tr bgcolor="gray">
+                        <th colspan="2">
+                            
+                            <input onclick="hitung(this.name)" type="button" value="Tambah" name="tambah">
+                            <input onclick="hitung(this.name)" type="button" value="Kurang" name="kurang">
+                            <input onclick="hitung(this.name)" type="button" value="Kali" name="kali">
+                            <input onclick="hitung(this.name)" type="button" value="Bagi" name="bagi">
+                            <input onclick="hitung(this.name)" type="button" value="Pangkat" name="pangkat">
+                            <input type="button" name="batal" value="Batal" onclick="kosongAll()" />
+                            
+                        </th>
+                    </tr>    
+                </tfoot>
+                <tbody>
+                    <tr>
+                        <td width="20%" cellpadding="15">Angka 1</td>
+                        <td>
+                            <input type="text" width="30%" cellpadding="15" cellspacing="15" name="a1" value="Masukkan Angka ke 1" onfocus="kosong1()"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="20%" cellpadding="15">Angka 2</td>
+                        <td>
+                            <input type="text" width="20%" cellpadding="15" cellspacing="15" name="a2" value="Masukkan Angka ke 2" onfocus="kosong2()"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Hasil</td>
+                        <td>
+                            <input type="text" name="hasil" value="0" disabled/>
+                        </td>
+                    </tr>
+                </tbody>        
+            </table>    
+        </form>    
+        <script src="hitung.js"></script>
+    </body>        
+</html>    
