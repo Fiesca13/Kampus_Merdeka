@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Tugas JS 7</title>
+    <link rel="stylesheet" href="mycss.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="judul">
+            <h2>INFORMASI GEMPA TERKINI</h2>
+        </div>
+
+        <form action="" id="formulir">
+            <div class="form-group">
+                <p>Update 8 Maret 2022</p>
+                <p>Sumber : <a href="https://earthquake.usgs.gov/" target="_blank">United States Geological Survey (USGS)</a></p> <br>
+            </div>
+        <!-- script -->
+        <script>
+            class Gempa {
+                constructor(lokasi, skala) {
+                    this.lokasi = lokasi;
+                    this.skala = skala;
+                }
+                dampak() {
+                    let sk = this.skala;
+                    let kondisi;
+                    if (sk >= 0 && sk <= 2) kondisi = "Tidak terasa";
+                    else if (sk > 2 && sk <= 4) kondisi = "Bangunan retak-retak";
+                    else if (sk > 4 && sk <= 6) kondisi = "Bangunan roboh";
+                    else if (sk > 6) kondisi = "Bangunan roboh dan berpotensi tsunami";
+                    document.write(`
+                    <div class="form-group">
+                        <label>Lokasi gempa</label>
+                        <input class="" type="text" name="a1" value="${this.lokasi}" disabled>
+                    </div>
+                    <div class="form-group">
+                        <label>Skala Kekuatan</label>
+                        <input class="" type="text" name="a1" value="${sk} SR" disabled>
+                    </div>
+                    <div class="form-group">
+                        <label>Dampak yang ditimbulkan</label>
+                        <input class="" type="text" name="a1" value="${kondisi}" disabled>
+                    </div>
+                    <hr>
+                    `
+                    );
+                }
+            }
+            /////////////////////////////////////////////////////////
+            //gunakan construktor class 
+            let data1 = new Gempa('KEP.SITARO-SULUT, INDONESIA', 5.6);
+            let data2 = new Gempa('MOHR, IRAN', 4.7);
+            let data3 = new Gempa('PREFEKTUR FUKUSHIMA', 4.0);
+            let data4 = new Gempa('UNALASKA, USA', 4.2);
+            let data5 = new Gempa('KILEMBE, UGANDA', 4.6);
+            let data6 = new Gempa('PAHALA, HAWAII', 2.6);
+            let data7 = new Gempa('FARKHAR, AFGHANISTAN', 4.2);
+            let data8 = new Gempa('IQUIQUE, CHILE', 4.1);
+            let data9 = new Gempa('FUIG, PUERTO RICO', 2.5);
+            let data10 = new Gempa('MUGUR-AKSY, RUSSIA', 4.0);
+            // cetak
+            for(let i=0; i<10; i++){
+            data1.dampak();
+            data2.dampak();
+            data3.dampak();
+            data4.dampak();
+            data5.dampak();
+            data6.dampak();
+            data7.dampak();
+            data8.dampak();
+            data9.dampak();
+            data10.dampak();
+            }
+        </script>
+        <!--  -->
+        </form>
+    </div>
+</body>
+</html>
